@@ -1,0 +1,22 @@
+<h1>KEYVIEW</h1>
+<p><input type="button" value="Home" onclick="window.location.href='http://localhost:5000/'" ></p>
+
+<p>{{ job }}</p>
+<table border = 1>
+         {% for key, value in keydata.items() %}
+
+            <tr>
+               <th> {{ key }} </th>
+               <td> {{ value }} </td>
+            </tr>
+
+         {% endfor %}
+      </table>
+
+<p>
+<form action="http://localhost:5000/stopjob" name="view" method="post">
+  <input type="text" name="rediskeyerror" value="{{ job }}"  >
+  <input type="submit" value="stop">
+
+
+</form>
